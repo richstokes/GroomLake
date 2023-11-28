@@ -43,7 +43,7 @@ def handle_input(self):
             self.playerDirection = 0  # reset to straight when key is released
 
         # Move camera up and down
-        if pyxel.btn(pyxel.KEY_UP) 
+        if pyxel.btn(pyxel.KEY_UP):
             self.playerY += 100
         if pyxel.btn(pyxel.KEY_DOWN):
             self.playerY -= 100
