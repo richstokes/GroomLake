@@ -24,10 +24,10 @@ class Line:
         self.road_color = 0
 
     def project(self, camX, camY, camZ):
-        self.scale = camD / (self.z - camZ)
+        self.scale = CAMERA_DEPTH / (self.z - camZ)
         self.X = (1 + self.scale * (self.x - camX)) * WINDOW_WIDTH / 2
         self.Y = (1 - self.scale * (self.y - camY)) * WINDOW_HEIGHT / 2
-        self.W = self.scale * roadW * WINDOW_WIDTH / 2
+        self.W = self.scale * ROAD_WIDTH * WINDOW_WIDTH / 2
 
     def drawSprite(self):
         if self.sprite is None:
@@ -127,7 +127,6 @@ class Line:
     def draw_ufos(self):
         if self.sprite is None:
             return
-        print(f"self.spriteX: {self.spriteX}")
         w = 320
         h = 3200
 

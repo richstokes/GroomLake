@@ -3,26 +3,18 @@ import random
 
 WINDOW_WIDTH = 256
 WINDOW_HEIGHT = 224
-roadW = 2000  # road width (left to right)
-segL = 100  # segment length (top to bottom)
-camD = 1  # camera depth
-show_N_seg = 300  # number of segments to draw, default 200
+ROAD_WIDTH = 2000  # road width (left to right)
+SEGMENT_LENGTH = 100  # segment length (top to bottom)
+CAMERA_DEPTH = 1  # camera depth
+SHOW_N_SEGMENTS = 300  # number of segments to draw, default 200
 LAP_LENGTH = 2700  # length of the lap in segments
 F22_APPEAR_AT = 400  # when to show the F22
 
-# Define the map size and angle
-x_map = 50
-y_map = 60
-angle_map = 0
-
-# Define line length and angle increment
-length_map = 1
-
 # Define the colors
-dark_road = 13  # was 4
-white_rumble = 7  # was 1
-light_grass = 3
-dark_grass = 11
+DARK_ROAD = 13  # was 4
+WHITE_RUMBLE = 7  # was 1
+LIGHT_GRASS = 3
+DARK_GRASS = 11
 
 # properties for use with the track generation
 # Random values for curves

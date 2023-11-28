@@ -180,15 +180,15 @@ class GameWindow:
         for i in range(LAP_LENGTH):
             line = Line(i)
             line.z = (
-                i * segL + 0.00001
+                i * SEGMENT_LENGTH + 0.00001
             )  # adding a small value avoids Line.project() errors
 
             # change color at every other 3 lines (int floor division)
-            grass_color = light_grass if (i // 40) % 2 else dark_grass
-            rumble_color = white_rumble
-            road_color = dark_road
+            grass_color = LIGHT_GRASS if (i // 40) % 2 else DARK_GRASS
+            rumble_color = WHITE_RUMBLE
+            road_color = DARK_ROAD
             stripe_color = (
-                dark_road if (i // 15) % 2 else white_rumble
+                DARK_ROAD if (i // 15) % 2 else WHITE_RUMBLE
             )  # this is what makes the center lines
 
             line.grass_color = grass_color
@@ -263,8 +263,8 @@ class GameWindow:
         self.distanceTraveled = self.pos / 200 + (LAP_LENGTH * self.lap)
 
         # loop the circut from start to finish
-        while self.pos >= N * segL:
-            self.pos -= N * segL
+        while self.pos >= N * SEGMENT_LENGTH:
+            self.pos -= N * SEGMENT_LENGTH
             self.lap += 1
             # increase frequency of enemies every lap
             self.leftLaneEnemyRate = int(self.leftLaneEnemyRate / 1.2)
@@ -274,8 +274,8 @@ class GameWindow:
                     f"leftLaneEnemyRate: {self.leftLaneEnemyRate}, rightLaneEnemyRate: {self.rightLaneEnemyRate}"
                 )
         while self.pos < 0:
-            self.pos += N * segL
-        startPos = self.pos // segL
+            self.pos += N * SEGMENT_LENGTH
+        startPos = self.pos // SEGMENT_LENGTH
 
         x = dx = 0.0  # curve offset on x axis
 
@@ -295,11 +295,11 @@ class GameWindow:
         self.linespr = lines[startPos].curve
 
         # draw road / environment
-        for n in range(startPos, startPos + show_N_seg):
+        for n in range(startPos, startPos + SHOW_N_SEGMENTS):
             current = lines[n % N]
-            # loop the circut from start to finish = pos - (N * segL if n >= N else 0)
+            # loop the circut from start to finish = pos - (N * SEGMENT_LENGTH if n >= N else 0)
             current.project(
-                self.playerX - x, camH, self.pos - (N * segL if n >= N else 0)
+                self.playerX - x, camH, self.pos - (N * SEGMENT_LENGTH if n >= N else 0)
             )
             x += dx
 
@@ -354,7 +354,7 @@ class GameWindow:
                 current.W * 0.025,
             )
 
-        for n in range(startPos + show_N_seg, startPos + 1, -1):
+        for n in range(startPos + SHOW_N_SEGMENTS, startPos + 1, -1):
             lines[n % N].drawSprite()
             lines[n % N].draw_ufos()
 
