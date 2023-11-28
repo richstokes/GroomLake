@@ -1,6 +1,7 @@
 # GroomLake
 ![screenshot](https://github.com/richstokes/GroomLake/blob/main/assets/screenshot.png?raw=true)
 
+[CLICK HERE](https://richstokes.github.io/GroomLake/dist/) to play now! 
 
 
 ## What is this?
