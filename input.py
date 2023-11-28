@@ -4,12 +4,12 @@ from config import *
 
 def handle_input(self):
     if self.gameState == 1:  # only accept player input when game is running
-        if pyxel.btn(pyxel.KEY_W):
+        if pyxel.btn(pyxel.KEY_W) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_UP):
             if 90 > self.kmh > 0 and pyxel.frame_count % 5 == 0:
                 self.kmh += 6
             if pyxel.frame_count % 5 == 0:
                 self.kmh += 2
-        if pyxel.btn(pyxel.KEY_S):
+        if pyxel.btn(pyxel.KEY_S) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_DOWN):
             # Slow down quicker when going slower
             if self.kmh <= 0:
                 self.kmh = 0
@@ -21,7 +21,7 @@ def handle_input(self):
                 self.kmh -= 2
 
         # Turn right
-        if pyxel.btn(pyxel.KEY_D):
+        if pyxel.btn(pyxel.KEY_D) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
             if self.kmh > 0:
                 # self.playerX += 5
                 self.inputX += 5
@@ -32,7 +32,7 @@ def handle_input(self):
             self.playerDirection = 0  # reset to straight when key is released
 
         # Turn left
-        if pyxel.btn(pyxel.KEY_A):
+        if pyxel.btn(pyxel.KEY_A) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
             if self.kmh > 0:
                 # self.playerX -= 5
                 self.inputX -= 5
