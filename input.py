@@ -4,12 +4,12 @@ from config import *
 
 def handle_input(self):
     if self.gameState == 1:  # only accept player input when game is running
-        if pyxel.btn(pyxel.KEY_W) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_UP):
+        if pyxel.btn(pyxel.KEY_W) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_A):
             if 90 > self.kmh > 0 and pyxel.frame_count % 5 == 0:
                 self.kmh += 6
             if pyxel.frame_count % 5 == 0:
                 self.kmh += 2
-        if pyxel.btn(pyxel.KEY_S) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_DOWN):
+        if pyxel.btn(pyxel.KEY_S) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_B):
             # Slow down quicker when going slower
             if self.kmh <= 0:
                 self.kmh = 0
