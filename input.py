@@ -75,7 +75,7 @@ def handle_input(self):
         pyxel.quit()
 
     # Reset game if R pressed
-    if pyxel.btn(pyxel.KEY_R):
+    if pyxel.btn(pyxel.KEY_R) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_Y):
         self.playerX = 135
         self.kmh = 0
         self.pos = 0
@@ -91,7 +91,7 @@ def handle_input(self):
         self.didSave = False
 
     # Toggle showing the alien
-    if pyxel.btn(pyxel.KEY_U):
+    if pyxel.btn(pyxel.KEY_U) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_X):
         if self.easterEgg == False:
             self.easterEgg = True
         else:
