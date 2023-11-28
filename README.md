@@ -6,11 +6,13 @@
 
 ## What is this?
 
-I've always been interested in "2.5D" racing games in the style of Outrun. I stumbled upon [this example](https://github.com/ChazyChazZz/PyxelRoadDemo), which uses the pyxel python game engine, and decided to build upon it.
+I've always been interested in "2.5D" racing games in the style of Outrun. I stumbled upon [this great example](https://github.com/ChazyChazZz/PyxelRoadDemo), which uses the pyxel python game engine, and decided to mess around on it as a part of learning how all the 2D project stuff works.
 
 The theme is based on Groom Lake, the site of the infamous Area 51.  
 
-The track is randomly generated.
+The track is randomly generated.  
+
+Contributions are welcome if anyone wants to help build upon this!
 
 ## Controls
 WSAD
