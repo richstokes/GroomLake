@@ -1,5 +1,5 @@
 # GroomLake
-![screenshot](https://github.com/richstokes/GroomLake/assets/screenshot.png)
+![screenshot](https://github.com/richstokes/GroomLake/blob/main/assets/screenshot.png?raw=true)
 
 
 
