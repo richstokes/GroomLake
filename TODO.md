@@ -2,7 +2,7 @@
 [x] Slowdown when off track  
 [ ] Infinite/procedural track?  
 [x] NPCs/Enemies  
-[x] UFOs
+[x] UFOs  
 [ ] distance counter  
 
 
